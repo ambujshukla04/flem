@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.example.opencvgl"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=gnu++17 -O2"
+            }
+        }
+    }
+    buildFeatures { viewBinding true }
+    externalNativeBuild { cmake { path "CMakeLists.txt" } }
+    ndkVersion "25.1.8937393"
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
+    implementation 'androidx.core:core-ktx:1.10.1'
+}

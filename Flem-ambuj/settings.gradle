@@ -1,0 +1,2 @@
+rootProject.name = "opencv_gl_project"
+include ":app"
